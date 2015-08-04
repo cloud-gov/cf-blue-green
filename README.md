@@ -1,6 +1,6 @@
 # Cloud Foundry blue-green deployment
 
-Allows zero-downtime deployments of applications within Cloud Foundry.
+Allows zero-downtime deployments of applications within Cloud Foundry, with no additional setup needed.
 
 ## Usage
 
@@ -13,9 +13,7 @@ Requires [the `cf` CLI](https://docs.cloudfoundry.org/devguide/installcf/install
         1. Move the file somewhere in your PATH.
 1. Run `cf-blue-green <appname>` (instead of `cf-push`) from your application directory to deploy.
 
-This creates a copy of your already-running application, and safely switches traffic over to it. No additional setup needed!
-
-It's recommended that you try this script on a non-production application environment first, just to ensure that everything is switched over properly.
+This creates a copy of your already-running application, and safely switches traffic over to it. It's recommended that you try this script on a non-production application environment first, just to ensure that everything is switched over properly.
 
 ## Resources
 
