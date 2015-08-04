@@ -2,7 +2,7 @@
 
 # Blue-green deployment script. Usage:
 #
-#   ./script/deploy <appname>
+#   ./cf-deploy <appname>
 #
 # Based on
 #   http://www.cloudfoundry.rocks/blue-green-deployment-with-cloudfoundry/
