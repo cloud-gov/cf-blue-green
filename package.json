@@ -1,0 +1,24 @@
+{
+  "name": "cf-blue-green",
+  "version": "0.1.0",
+  "description": "zero-downtime deployment for Cloud Foundry applications",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/18F/cf-blue-green.git"
+  },
+  "keywords": [
+    "cloud foundry",
+    "blue-green",
+    "zero-downtime",
+    "deploy"
+  ],
+  "author": "Aidan Feldman <aidan.feldman@gsa.gov>",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/18F/cf-blue-green/issues"
+  },
+  "homepage": "https://github.com/18F/cf-blue-green#readme",
+  "bin": {
+    "cf-blue-green": "./bin/cf-blue-green"
+  }
+}
