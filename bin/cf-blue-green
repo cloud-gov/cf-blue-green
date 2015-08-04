@@ -2,7 +2,7 @@
 
 # Blue-green deployment script. Usage:
 #
-#   ./cf-deploy <appname>
+#   ./cf-blue-green <appname>
 
 set -e
 set -o pipefail
