@@ -4,10 +4,10 @@ Allows zero-downtime deployments of applications within Cloud Foundry.
 
 ## Usage
 
-Requires [the `cf` CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).
+Requires [the `cf` CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html) v6.12.2+.
 
 1. Run `npm install -g cf-blue-green`.
-    * Requires Node.js, to make distribution easy. If you don't want to install it, simply:
+    * Requires Node.js, just for distribution via NPM. If you don't want to install it, simply:
         1. Download [the script](bin/cf-blue-green).
         1. Run `chmod a+x cf-blue-green`.
         1. Move the file somewhere in your PATH.
