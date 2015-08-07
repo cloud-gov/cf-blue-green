@@ -4,9 +4,9 @@ Allows zero-downtime deployments of applications within Cloud Foundry, with no a
 
 ## Usage
 
-1. Install [the `cf` CLI](https://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html) < v6.12.0.
+1. [Install the `cf` CLI](https://github.com/cloudfoundry/cli/releases), v6.12.0 or v6.12.1.
     * See [Notes](#cf-cli) below for more info about the version restriction.
-1. Run `npm install -g cf-blue-green`
+1. Run `npm install -g cf-blue-green`.
     * See [Notes](#manual-installation) below for non-Node installation.
 1. Run `cf-blue-green <appname>` (instead of `cf-push`) from your application directory to deploy.
 
@@ -16,14 +16,17 @@ This creates a copy of your already-running application, and safely switches tra
 
 ### CF CLI
 
-v6.12.0+ has [an unresolved bug](https://www.pivotaltracker.com/n/projects/892938/stories/100594158) (as of this writing) that breaks `cf-blue-green`, so you will need an older version. To downgrade to 6.11.3 on Mac, if you use [Homebrew](http://brew.sh/):
+The reasons for the tight version restriction on the CF CLI is:
+
+* < 6.12.0 [doesn't respect the `buildpack` parameter](https://www.pivotaltracker.com/n/projects/892938/stories/96041780).
+* 6.12.2+ has [an unresolved bug](https://www.pivotaltracker.com/n/projects/892938/stories/100594158) (as of this writing) that breaks `cf-blue-green`
+
+To downgrade to 6.12.1 on Mac, if you use [Homebrew](http://brew.sh/):
 
 ```bash
 brew uninstall cloudfoundry-cli
-brew install https://raw.githubusercontent.com/pivotal/homebrew-tap/cefcf8f7766b12d2945e93df53ce3aa3f00b7e5c/cloudfoundry-cli.rb
+brew install https://raw.githubusercontent.com/pivotal/homebrew-tap/b39786b30125187bfa37a71eebef88222aa2c435/cloudfoundry-cli.rb
 ```
-
-Note, however, that older versions have a _different_ issue, where [the `buildpack` parameter isn't respected](https://www.pivotaltracker.com/n/projects/892938/stories/96041780). In other words, don't use `cf-blue-green` (for now) if you use a custom buildpack. Sorry!
 
 ### Manual installation
 
