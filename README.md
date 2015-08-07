@@ -36,6 +36,10 @@ The script is distributed via NPM, but doesn't actually require Node.js beyond t
 1. Run `chmod a+x cf-blue-green`.
 1. Move the file somewhere in your PATH.
 
+### Manifests
+
+`cf-blue-green` creates a temporary manifest from your live application, meaning that it ignores the `manifest.yml` in your directory, if you have one. To deploy any changes to your manifest, use `cf push` directly.
+
 ## Resources
 
 More information about blue-green deployment, all of which this script drew from.
