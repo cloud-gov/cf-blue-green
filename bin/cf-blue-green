@@ -8,6 +8,13 @@ set -e
 set -o pipefail
 set -x
 
+
+if [ $# -ne 1 ]; then
+	echo "Usage:\n\n\t./cf-blue-green <appname>\n"
+	exit 1
+fi
+
+
 BLUE=$1
 GREEN="${BLUE}-B"
 
