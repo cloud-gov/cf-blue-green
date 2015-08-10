@@ -1,6 +1,6 @@
 {
   "name": "cf-blue-green",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "zero-downtime deployment for Cloud Foundry applications",
   "repository": {
     "type": "git",
