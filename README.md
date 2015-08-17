@@ -36,6 +36,30 @@ The script is distributed via NPM, but doesn't actually require Node.js beyond t
 1. Run `chmod a+x cf-blue-green`.
 1. Move the file somewhere in your PATH.
 
+### Using with Travis
+
+Travis supports [continuous deployment](http://docs.travis-ci.com/user/deployment/), which will automatically deploy your application after its tests pass on a specified branch. To use `cf-blue-green` with Travis, you need to use a [script provider](http://docs.travis-ci.com/user/deployment/script/) instead of the default Cloud Foundry provider. Your Cloud Foundry settings are read from environment variables.
+
+Set up continuous deployment with the following settings in your `.travis.yml` file:
+
+```yml
+sudo: true
+env:
+  global:
+  - CF_APP=[app name]
+  - CF_API=[API endpoint]
+  - CF_USERNAME=[user]
+  - CF_ORGANIZATION=[organization]
+  - CF_SPACE=[space]
+  - secure: [CF_PASSWORD=[encrypted with Travis](http://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables)]
+before_deploy: npm install -g cf-blue-green
+deploy:
+  provider: script
+  script: cf-blue-green-travis
+  on:
+    branch: [git branch you want to deploy]
+```
+
 ### Manifests
 
 `cf-blue-green` creates a temporary manifest from your live application, meaning that it ignores the `manifest.yml` in your directory, if you have one. To deploy any changes to your manifest, use `cf push` directly.
