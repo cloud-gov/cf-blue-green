@@ -43,7 +43,7 @@ Travis supports [continuous deployment](http://docs.travis-ci.com/user/deploymen
 Set up continuous deployment with the following settings in your `.travis.yml` file:
 
 ```yml
-before_install: npm install -g cf-blue-green
+sudo: true
 env:
   global:
   - CF_APP=[app name]
@@ -52,6 +52,7 @@ env:
   - CF_ORGANIZATION=[organization]
   - CF_SPACE=[space]
   - secure: [CF_PASSWORD=[encrypted with Travis](http://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables)]
+before_deploy: npm install -g cf-blue-green
 deploy:
   provider: script
   script: cf-blue-green-travis
