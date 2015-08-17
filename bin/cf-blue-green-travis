@@ -2,6 +2,10 @@
 
 set -e
 
+# Use the URL to a Debian 64 bit installer select from here:
+# https://github.com/cloudfoundry/cli/releases
+# This is the source file after following the redirect
+# Using v6.12.1 because of this: https://github.com/18F/cf-blue-green#cf-cli
 wget http://go-cli.s3-website-us-east-1.amazonaws.com/releases/v6.12.1/cf-cli_amd64.deb -qO temp.deb && sudo dpkg -i temp.deb
 
 rm temp.deb
