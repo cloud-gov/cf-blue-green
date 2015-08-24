@@ -72,3 +72,4 @@ More information about blue-green deployment, all of which this script drew from
 * http://martinfowler.com/bliki/BlueGreenDeployment.html
 * http://docs.pivotal.io/pivotalcf/devguide/deploy-apps/blue-green.html
 * https://github.com/dlapiduz/step-cloud-foundry-deploy/blob/master/run.sh
+* https://github.com/concourse/autopilot
