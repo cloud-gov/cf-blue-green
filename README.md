@@ -4,8 +4,7 @@ Allows zero-downtime deployments of applications within Cloud Foundry, with no a
 
 ## Usage
 
-1. [Install the `cf` CLI](https://github.com/cloudfoundry/cli/releases), v6.12.0 or v6.12.1.
-    * See [Notes](#cf-cli) below for more info about the version restriction.
+1. [Install the `cf` CLI](https://github.com/cloudfoundry/cli/releases) **v6.12.4+**.
 1. Run `npm install -g cf-blue-green`.
     * See [Notes](#manual-installation) below for non-Node installation.
 1. Run `cf-blue-green <appname>` (instead of `cf-push`) from your application directory to deploy.
@@ -13,24 +12,6 @@ Allows zero-downtime deployments of applications within Cloud Foundry, with no a
 This creates a copy of your already-running application, and safely switches traffic over to it. It's recommended that you try this script on a non-production application environment first, just to ensure that everything is switched over properly.
 
 ## Notes
-
-### CF CLI
-
-The reasons for the tight version restriction on the CF CLI is:
-
-* < 6.12.0 [doesn't respect the `buildpack` parameter](https://www.pivotaltracker.com/n/projects/892938/stories/96041780).
-* 6.12.2+ has [a bug](https://www.pivotaltracker.com/n/projects/892938/stories/101367528) with an unreleased [fix](https://github.com/cloudfoundry/cli/commit/43154bedb0ff54d69097a7a225abf6c6948cf3ce) (as of this writing) that breaks `cf-blue-green`
-
-To downgrade to 6.12.1 on Mac, if you use [Homebrew](http://brew.sh/):
-
-```bash
-brew uninstall cloudfoundry-cli
-brew install https://raw.githubusercontent.com/pivotal/homebrew-tap/b39786b30125187bfa37a71eebef88222aa2c435/cloudfoundry-cli.rb
-```
-
-**Note:** If you use a custom `command` to start your application, it is [not currently respected](https://www.pivotaltracker.com/n/projects/892938/stories/102135048) by this plugin. This will be [fixed](https://github.com/cloudfoundry/cli/commit/c3f8628522081da62291e382067a33285ef4695f) with the next CF CLI release.
-
-You can try compiling the latest CF CLI from `master` to get around _all_ of these issues, if you're feeling adventurous.
 
 ### Manual installation
 
