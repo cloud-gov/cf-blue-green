@@ -1,4 +1,4 @@
-***Note: if your application's manifest is "complete", use [Autopilot](https://github.com/concourse/autopilot) instead.***
+***Note: if your application's manifest is "complete", use [Autopilot](https://github.com/concourse/autopilot) instead. More info [below](#manifests), in [the Autopilot README](https://github.com/concourse/autopilot#warning), and in [this Issue](https://github.com/concourse/autopilot/issues/11).***
 
 # Cloud Foundry blue-green deployment
 
