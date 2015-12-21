@@ -1,3 +1,5 @@
+***Note: if your application's manifest is "complete", use [Autopilot](https://github.com/concourse/autopilot) instead. More info [below](#manifests), in [the Autopilot README](https://github.com/concourse/autopilot#warning), and in [this Issue](https://github.com/concourse/autopilot/issues/11).***
+
 # Cloud Foundry blue-green deployment
 
 Allows zero-downtime deployments of applications within Cloud Foundry, with no additional setup needed.
@@ -49,6 +51,19 @@ deploy:
 
 `cf-blue-green` creates a temporary manifest from your live application, meaning that it ignores the `manifest.yml` in your directory, if you have one. To deploy any changes to your manifest, use `cf push` directly.
 
+## Multiple domains
+
+The script fails on apps with multiple domains, because the domains in the manifest are in the form of a list:
+
+```yml
+domain:
+  - 18f.gov
+  - digitalgov.gov
+```
+
+To work around this, use the env var `B_DOMAIN` for the domain you'd like the B instance to use.
+
+
 ## Resources
 
 More information about blue-green deployment, all of which this script drew from.
@@ -57,4 +72,3 @@ More information about blue-green deployment, all of which this script drew from
 * http://martinfowler.com/bliki/BlueGreenDeployment.html
 * http://docs.pivotal.io/pivotalcf/devguide/deploy-apps/blue-green.html
 * https://github.com/dlapiduz/step-cloud-foundry-deploy/blob/master/run.sh
-* https://github.com/concourse/autopilot
