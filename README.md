@@ -51,6 +51,19 @@ deploy:
 
 `cf-blue-green` creates a temporary manifest from your live application, meaning that it ignores the `manifest.yml` in your directory, if you have one. To deploy any changes to your manifest, use `cf push` directly.
 
+## Multiple domains
+
+The script fails on apps with multiple domains, because the domains in the manifest are in the form of a list:
+
+```yml
+domain:
+  - 18f.gov
+  - digitalgov.gov
+```
+
+To work around this, use the env var `B_DOMAIN` for the domain you'd like the B instance to use.
+
+
 ## Resources
 
 More information about blue-green deployment, all of which this script drew from.
