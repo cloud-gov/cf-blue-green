@@ -73,7 +73,7 @@ More information about blue-green deployment, all of which this script drew from
 * http://docs.pivotal.io/pivotalcf/devguide/deploy-apps/blue-green.html
 * https://github.com/dlapiduz/step-cloud-foundry-deploy/blob/master/run.sh
 
-## See also
+## Alternatives for Blue/Green Deploys in Cloud Foundry
 
 * [Autopilot](https://github.com/contraband/autopilot): Autopilot is a CloudFoundry Go plugin that provides a subcommand, `zero-downtime-push` for hands-off, zero-downtime application deploys.
-* [BlueGreenDeploy[(https://github.com/bluemixgaragelondon/cf-blue-green-deploy): cf-blue-green-deploy is a plugin, written in Go, for the CF command line tool that automates a few steps involved in zero-downtime deploys.
+* [BlueGreenDeploy](https://github.com/bluemixgaragelondon/cf-blue-green-deploy): cf-blue-green-deploy is a plugin, written in Go, for the CF command line tool that automates a few steps involved in zero-downtime deploys.
