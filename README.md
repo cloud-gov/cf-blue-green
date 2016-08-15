@@ -75,5 +75,5 @@ More information about blue-green deployment, all of which this script drew from
 
 ## See also
 
-* [Autopilot](https://github.com/concourse/autopilot)
-* https://github.com/bluemixgaragelondon/cf-blue-green-deploy
+* [Autopilot](https://github.com/contraband/autopilot): Autopilot is a CloudFoundry Go plugin that provides a subcommand, `zero-downtime-push` for hands-off, zero-downtime application deploys.
+* [BlueGreenDeploy[(https://github.com/bluemixgaragelondon/cf-blue-green-deploy): cf-blue-green-deploy is a plugin, written in Go, for the CF command line tool that automates a few steps involved in zero-downtime deploys.
