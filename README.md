@@ -38,6 +38,7 @@ env:
   - CF_USERNAME=[user]
   - CF_ORGANIZATION=[organization]
   - CF_SPACE=[space]
+  - CF_SLEEP=[# seconds to wait before swapping BLUE with GREEN]
   - secure: [CF_PASSWORD=[encrypted with Travis](http://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables)]
 before_deploy: npm install -g cf-blue-green
 deploy:
@@ -46,6 +47,8 @@ deploy:
   on:
     branch: [git branch you want to deploy]
 ```
+
+`CF_SLEEP` defines the number of seconds to sleep before replacing BLUE with GREEN. Useful when the new application requires some time to start.
 
 ### Manifests
 
