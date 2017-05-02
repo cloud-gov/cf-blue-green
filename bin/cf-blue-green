@@ -45,7 +45,7 @@ DOMAIN=${B_DOMAIN:-$(cat $MANIFEST | grep domain: | awk '{print $2}')}
 cf push $GREEN -f $MANIFEST -n $GREEN
 
 # wait for the apps to start
-sleep ${5:-CF_SLEEP}s # Waits 5 seconds.
+sleep ${CF_SLEEP:-5} # Waits 5 seconds.
 
 # ensure it starts
 curl --fail -I "https://${GREEN}.${DOMAIN}"
